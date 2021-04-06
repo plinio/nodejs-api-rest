@@ -1,9 +1,6 @@
-const express = require('express');
-const consign = require('consign');
+//responsabilidade do index.js é apenas subir o servidor.
 
-const app = express();
-consign()
-    .include('controllers')
-    .into(app)
-    
+const customExpress = require('./config/customExpress');
+const app = customExpress();
+
 app.listen(3000, ()=> console.log("servidor rodando na porta 3000"));
