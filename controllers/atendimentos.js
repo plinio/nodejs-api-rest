@@ -20,4 +20,13 @@ module.exports = app => {
         
     })
 
+    app.patch('/atendimentos/:id', (req,res)=>{
+        const id = parseInt(req.params.id);
+        const valores = req.body;
+        //Dados que serão alterados: 
+        console.log(valores);
+
+        Atendimento.altera(id, valores, res);
+    })
+
 }
